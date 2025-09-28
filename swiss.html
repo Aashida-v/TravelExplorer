@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiss Alps - TerraNova</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body {
+  background:#f9f9f9;
+  color:#333;
+  font-family:'Poppins',sans-serif;
+  line-height:1.5;
+}
+
+main {
+  padding:20px;
+}
+    header img { width:100%; height:220px; object-fit:cover; }
+    header h2 { padding:15px; font-size:1.6rem; }
+    header p { padding:0 15px 15px; color:#555; }
+    .tabs { display:flex; justify-content:space-around; background:#fff; border-bottom:1px solid #ddd; }
+    .tabs button { flex:1; padding:12px; border:none; background:#fff; cursor:pointer; font-weight:600; }
+    .tabs button.active { border-bottom:3px solid #ff6600; color:#ff6600; }
+    .card { margin-bottom:20px; border-radius:15px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+    .card img { width:100%; height:160px; object-fit:cover; }
+    .card-text { padding:12px; font-weight:500; }
+    .plan-btn { position:sticky; bottom:0; width:100%; background:#ff6600; color:#fff; border:none; padding:18px; font-size:1.2rem; font-weight:bold; cursor:pointer; border-radius:12px; margin-top:10px; }
+    .plan-btn:hover { background:#ff4500; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://images.unsplash.com/photo-1593186344142-ef775a6e596f?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D " alt="Swiss Alps">
+    <h2>Swiss Alps</h2>
+    <p>Snow-capped peaks, ski resorts, scenic train rides, and breathtaking alpine landscapes await in the Swiss Alps.</p>
+  </header>
+
+  <div class="tabs">
+    <button class="active" onclick="showTab('hotels')">Hotels</button>
+    <button onclick="showTab('things')">Things to Do</button>
+    <button onclick="showTab('restaurants')">Restaurants</button>
+  </div>
+
+  <main>
+    <div id="hotels" class="tab-content">
+      <div class="card"><img src="https://images.pexels.com/photos/311066/pexels-photo-311066.jpeg " alt="Resort"><div class="card-text">Ski Resort in Zermatt</div></div>
+      <div class="card"><img src="https://images.pexels.com/photos/7746557/pexels-photo-7746557.jpeg " alt="Chalet"><div class="card-text">Traditional Alpine Chalets</div></div>
+    </div>
+
+    <div id="things" class="tab-content" style="display:none;">
+      <div class="card"><img src="https://images.pexels.com/photos/352093/pexels-photo-352093.jpeg " alt="Skiing"><div class="card-text">World-Class Skiing & Snowboarding</div></div>
+      <div class="card"><img src="https://images.pexels.com/photos/11845845/pexels-photo-11845845.jpeg " alt="Scenic Train"><div class="card-text">Glacier Express Scenic Train</div></div>
+    </div>
+
+    <div id="restaurants" class="tab-content" style="display:none;">
+      <div class="card"><img src="https://images.pexels.com/photos/33977061/pexels-photo-33977061.jpeg " alt="Alpine Cuisine"><div class="card-text">Traditional Alpine Cuisine</div></div>
+      <div class="card"><img src="https://images.pexels.com/photos/14885927/pexels-photo-14885927.jpeg " alt="Fondue"><div class="card-text">Mountain View Fondue Spots</div></div>
+    </div>
+  </main>
+
+  <button class="plan-btn" on click="location.href='plan.html'">Plan a Trip to the Swiss Alps</button>
+
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll(".tab-content").forEach(el => el.style.display = "none");
+      document.getElementById(tab).style.display = "block";
+      document.querySelectorAll(".tabs button").forEach(btn => btn.classList.remove("active"));
+      event.target.classList.add("active");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - TerraNova</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body { background:#f5f7fa; color:#333; display:flex; flex-direction:column; height:100vh; }
+    header { background:#ff6600; color:#fff; padding:18px; text-align:center; font-size:1.4rem; font-weight:bold; }
+    main { flex:1; overflow-y:auto; padding:20px; display:flex; flex-direction:column; align-items:center; }
+    
+    .profile-card { background:#fff; width:100%; max-width:400px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:20px; text-align:center; margin-bottom:20px; }
+    .profile-card img { width:100px; height:100px; border-radius:50%; object-fit:cover; margin-bottom:15px; border:3px solid #ff6600; }
+    .profile-card h2, .profile-card p { margin-bottom:8px; }
+
+    .info-card { background:#fff; width:100%; max-width:400px; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1); padding:20px; margin-bottom:20px; }
+    .info-card h3 { margin-bottom:12px; font-size:1.2rem; color:#444; }
+    .info-item { margin-bottom:10px; font-size:0.95rem; color:#555; }
+    .info-item span { font-weight:bold; color:#222; }
+
+    .btn { display:block; width:100%; padding:12px; margin-top:12px; border:none; border-radius:10px; font-size:1rem; font-weight:bold; cursor:pointer; transition:0.3s; }
+    .edit-btn { background:#ff6600; color:#fff; }
+    .edit-btn:hover { background:#ff4500; }
+    .logout-btn { background:#ddd; color:#333; }
+    .logout-btn:hover { background:#bbb; }
+
+    input.editable { width:100%; padding:8px; margin-top:4px; border:1px solid #ccc; border-radius:6px; font-size:0.95rem; }
+    nav { display:flex; justify-content:space-around; padding:10px 0; background:#fff; border-top:1px solid #ddd; }
+    nav a { text-decoration:none; color:#555; font-weight:600; }
+    nav a.active { color:#ff6600; }
+  </style>
+</head>
+<body>
+  <header>My Profile</header>
+  <main>
+    <!-- Profile Card -->
+    <div class="profile-card">
+      <img src="profile2.png" alt="User">
+      <h2 id="name">Aashida</h2>
+      <p id="email">Aashida@example.com</p>
+    </div>
+
+    <!-- Info Section -->
+    <div class="info-card" id="info-section">
+      <h3>Personal Information</h3>
+      <div class="info-item"><span>Phone:</span> <span id="phone">+1 234 567 890</span></div>
+      <div class="info-item"><span>Location:</span> <span id="location">New York, USA</span></div>
+      <div class="info-item"><span>Member Since:</span> <span id="member">Jan 2024</span></div>
+    </div>
+
+    <!-- Settings Section -->
+    <div class="info-card">
+      <h3>Settings</h3>
+      <button id="editBtn" class="btn edit-btn">Edit Profile</button>
+      <button class="btn logout-btn">Logout</button>
+    </div>
+  </main>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="explore.html">Explore</a>
+    <a href="itineraries.html">Itineraries</a>
+    <a href="profile.html" class="active">Profile</a>
+  </nav>
+
+  <script>
+    const editBtn = document.getElementById("editBtn");
+    let editing = false;
+
+    editBtn.addEventListener("click", () => {
+      if (!editing) {
+        // Switch to edit mode
+        document.getElementById("name").innerHTML = `<input type="text" id="nameInput" class="editable" value="${document.getElementById("name").innerText}">`;
+        document.getElementById("email").innerHTML = `<input type="email" id="emailInput" class="editable" value="${document.getElementById("email").innerText}">`;
+        document.getElementById("phone").innerHTML = `<input type="text" id="phoneInput" class="editable" value="${document.getElementById("phone").innerText}">`;
+        document.getElementById("location").innerHTML = `<input type="text" id="locationInput" class="editable" value="${document.getElementById("location").innerText}">`;
+        
+        editBtn.textContent = "Save Changes";
+        editing = true;
+      } else {
+        // Save changes
+        document.getElementById("name").innerText = document.getElementById("nameInput").value;
+        document.getElementById("email").innerText = document.getElementById("emailInput").value;
+        document.getElementById("phone").innerText = document.getElementById("phoneInput").value;
+        document.getElementById("location").innerText = document.getElementById("locationInput").value;
+        
+        editBtn.textContent = "Edit Profile";
+        editing = false;
+      }
+    });
+  </script>
+</body>
+</html>

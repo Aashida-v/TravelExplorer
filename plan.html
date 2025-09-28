@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan a Trip - TerraNova</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body { background:#f5f7fa; color:#333; display:flex; flex-direction:column; min-height:100vh; }
+    header { background:#ff6600; color:#fff; padding:18px; text-align:center; font-size:1.4rem; font-weight:bold; }
+    main { flex:1; display:flex; justify-content:center; align-items:flex-start; padding:20px; }
+    .form-container { background:#fff; width:100%; max-width:500px; padding:25px; border-radius:15px; box-shadow:0 6px 18px rgba(0,0,0,0.1); }
+    .form-container h2 { margin-bottom:15px; font-size:1.3rem; color:#444; text-align:center; }
+    label { display:block; margin:12px 0 6px; font-weight:500; }
+    input, select, textarea { width:100%; padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem; }
+    textarea { resize:none; height:80px; }
+    button { width:100%; margin-top:20px; padding:14px; font-size:1.1rem; font-weight:bold; background:#ff6600; color:#fff; border:none; border-radius:10px; cursor:pointer; transition:0.3s; }
+    button:hover { background:#ff4500; }
+  </style>
+</head>
+<body>
+  <header>Plan a Trip</header>
+  <main>
+    <div class="form-container">
+      <h2>Fill in your trip details</h2>
+      <form onsubmit="createPlan(event)">
+        <label for="destination">Destination</label>
+        <input type="text" id="destination" name="destination" placeholder="e.g. Rome, Bali" required>
+
+        <label for="start-date">Start Date</label>
+        <input type="date" id="start-date" name="start-date" required>
+
+        <label for="end-date">End Date</label>
+        <input type="date" id="end-date" name="end-date" required>
+
+        <label for="travelers">Number of Travelers</label>
+        <select id="travelers" name="travelers" required>
+          <option value="1">1 Traveler</option>
+          <option value="2">2 Travelers</option>
+          <option value="3">3 Travelers</option>
+          <option value="4+">4+ Travelers</option>
+        </select>
+
+        <label for="budget">Budget</label>
+        <input type="number" id="budget" name="budget" placeholder="Enter budget in USD" required>
+
+        <label for="preferences">Preferences</label>
+        <textarea id="preferences" name="preferences" placeholder="Tell us what you’d like (beach, adventure, culture, etc.)"></textarea>
+
+        <button type="submit">Create Plan</button>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    function createPlan(event) {
+      event.preventDefault();
+      alert("🎉 Your trip plan has been created! (This can later redirect to an itinerary page.)");
+      // In future, redirect to itineraries.html or show a generated plan
+      window.location.href = "explore.html";
+    }
+  </script>
+</body>
+</html>

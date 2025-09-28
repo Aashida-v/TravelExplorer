@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tokyo - TerraNova</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body {
+  background:#f9f9f9;
+  color:#333;
+  font-family:'Poppins',sans-serif;
+  line-height:1.5;
+}
+
+main {
+  padding:20px;
+}
+    header img { width:100%; height:220px; object-fit:cover; }
+    header h2 { padding:15px; font-size:1.6rem; }
+    header p { padding:0 15px 15px; color:#555; }
+    .tabs { display:flex; justify-content:space-around; background:#fff; border-bottom:1px solid #ddd; }
+    .tabs button { flex:1; padding:12px; border:none; background:#fff; cursor:pointer; font-weight:600; }
+    .tabs button.active { border-bottom:3px solid #ff6600; color:#ff6600; }
+    .card { margin-bottom:20px; border-radius:15px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+    .card img { width:100%; height:160px; object-fit:cover; }
+    .card-text { padding:12px; font-weight:500; }
+    .plan-btn { position:sticky; bottom:0; width:100%; background:#ff6600; color:#fff; border:none; padding:18px; font-size:1.2rem; font-weight:bold; cursor:pointer; border-radius:12px; margin-top:10px; }
+    .plan-btn:hover { background:#ff4500; }
+   
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://images.unsplash.com/photo-1557409518-691ebcd96038?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D " alt="Tokyo">
+    <h2>Tokyo</h2>
+    <p>A dazzling metropolis blending tradition and modernity, famous for Shibuya Crossing, temples, anime culture, and sushi.</p>
+  </header>
+
+  <div class="tabs">
+    <button class="active" onclick="showTab('hotels')">Hotels</button>
+    <button onclick="showTab('things')">Things to Do</button>
+    <button onclick="showTab('restaurants')">Restaurants</button>
+  </div>
+
+  <main>
+    <div id="hotels" class="tab-content">
+      <div class="card"><img src="https://images.pexels.com/photos/1510595/pexels-photo-1510595.jpeg " alt="Hotel"><div class="card-text">Luxury Hotel in Shinjuku</div></div>
+      <div class="card"><img src="https://images.pexels.com/photos/7792200/pexels-photo-7792200.jpeg " alt="Ryokan"><div class="card-text">Traditional Japanese Ryokan</div></div>
+    </div>
+
+    <div id="things" class="tab-content" style="display:none;">
+      <div class="card"><img src="https://images.pexels.com/photos/3402955/pexels-photo-3402955.jpeg " alt="Shibuya"><div class="card-text">Walk through Shibuya Crossing</div></div>
+      <div class="card"><img src="https://images.pexels.com/photos/32416124/pexels-photo-32416124.jpeg " alt="Sensoji Temple"><div class="card-text">Visit Senso-ji Temple</div></div>
+    </div>
+
+    <div id="restaurants" class="tab-content" style="display:none;">
+      <div class="card"><img src="https://images.pexels.com/photos/9882300/pexels-photo-9882300.jpeg " alt="Sushi"><div class="card-text">World-Class Sushi Bars</div></div>
+      <div class="card"><img src="https://images.pexels.com/photos/31002131/pexels-photo-31002131.jpeg " alt="Ramen"><div class="card-text">Authentic Ramen Shops</div></div>
+    </div>
+  </main>
+
+  <button class="plan-btn" on click="location.href='plan.html'">Plan a Trip to Tokyo</button>
+
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll(".tab-content").forEach(el => el.style.display = "none");
+      document.getElementById(tab).style.display = "block";
+      document.querySelectorAll(".tabs button").forEach(btn => btn.classList.remove("active"));
+      event.target.classList.add("active");
+    }
+  </script>
+</body>
+</html>

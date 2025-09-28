@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Santorini - TerraNova</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body {
+  background:#f9f9f9;
+  color:#333;
+  font-family:'Poppins',sans-serif;
+  line-height:1.5;
+}
+
+main {
+  padding:20px;
+}
+    header img { width:100%; height:220px; object-fit:cover; }
+    header h2 { padding:15px; font-size:1.6rem; }
+    header p { padding:0 15px 15px; color:#555; }
+    .tabs { display:flex; justify-content:space-around; background:#fff; border-bottom:1px solid #ddd; }
+    .tabs button { flex:1; padding:12px; border:none; background:#fff; cursor:pointer; font-weight:600; }
+    .tabs button.active { border-bottom:3px solid #ff6600; color:#ff6600; }
+    .card { margin-bottom:20px; border-radius:15px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+    .card img { width:100%; height:160px; object-fit:cover; }
+    .card-text { padding:12px; font-weight:500; }
+    .plan-btn { position:sticky; bottom:0; width:100%; background:#ff6600; color:#fff; border:none; padding:18px; font-size:1.2rem; font-weight:bold; cursor:pointer; border-radius:12px; margin-top:10px; }
+    .plan-btn:hover { background:#ff4500; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?q=80&w=1138&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D " alt="Santorini">
+    <h2>Santorini</h2>
+    <p>Famous for its whitewashed houses, blue-domed churches, breathtaking sunsets, and views over the Aegean Sea.</p>
+  </header>
+
+  <div class="tabs">
+    <button class="active" onclick="showTab('hotels')">Hotels</button>
+    <button onclick="showTab('things')">Things to Do</button>
+    <button onclick="showTab('restaurants')">Restaurants</button>
+  </div>
+
+  <main>
+    <div id="hotels" class="tab-content">
+      <div class="card"><img src="https://images.pexels.com/photos/1010640/pexels-photo-1010640.jpeg " alt="Resort"><div class="card-text">Cliffside Luxury Resort</div></div>
+      <div class="card"><img src="https://images.pexels.com/photos/13900601/pexels-photo-13900601.jpeg " alt="Hotel"><div class="card-text">Traditional Cycladic Hotel</div></div>
+    </div>
+
+    <div id="things" class="tab-content" style="display:none;">
+      <div class="card"><img src="https://images.pexels.com/photos/1010659/pexels-photo-1010659.jpeg "alt="Sunset"><div class="card-text">Watch the Sunset in Oia</div></div>
+      <div class="card"><img src="https://images.pexels.com/photos/6004943/pexels-photo-6004943.jpeg " alt="Beach"><div class="card-text">Relax at Red Beach</div></div>
+    </div>
+
+    <div id="restaurants" class="tab-content" style="display:none;">
+      <div class="card"><img src="https://images.pexels.com/photos/12899251/pexels-photo-12899251.jpeg " alt="Greek Food"><div class="card-text">Authentic Greek Taverns</div></div>
+      <div class="card"><img src="https://images.pexels.com/photos/39351/purple-grapes-vineyard-napa-valley-napa-vineyard-39351.jpeg " alt="Santorini Wine"><div class="card-text">Wine Tasting in Vineyards</div></div>
+    </div>
+  </main>
+
+  <button class="plan-btn" on click="location.href='plan.html'">Plan a Trip to Santorini</button>
+
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll(".tab-content").forEach(el => el.style.display = "none");
+      document.getElementById(tab).style.display = "block";
+      document.querySelectorAll(".tabs button").forEach(btn => btn.classList.remove("active"));
+      event.target.classList.add("active");
+    }
+  </script>
+</body>
+</html>

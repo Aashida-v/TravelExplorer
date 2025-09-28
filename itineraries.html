@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Itineraries - TerraNova</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+    body { background:#f5f7fa; color:#333; display:flex; flex-direction:column; height:100vh; }
+    header { background:#ff6600; color:#fff; padding:18px; text-align:center; font-size:1.4rem; font-weight:bold; }
+    main { flex:1; overflow-y:auto; padding:20px; }
+    .trip-card { background:#fff; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.1); margin-bottom:20px; overflow:hidden; }
+    .trip-card img { width:100%; height:180px; object-fit:cover; }
+    .trip-content { padding:15px; }
+    .trip-content h3 { margin-bottom:8px; font-size:1.3rem; }
+    .trip-content p { color:#666; margin-bottom:6px; }
+    .status { display:inline-block; padding:6px 12px; border-radius:20px; font-size:0.9rem; font-weight:600; }
+    .completed { background:#e0ffe0; color:#228B22; }
+    nav { display:flex; justify-content:space-around; padding:10px 0; background:#fff; border-top:1px solid #ddd; }
+    nav a { text-decoration:none; color:#555; font-weight:600; }
+    nav a.active { color:#ff6600; }
+  </style>
+</head>
+<body>
+  <header>My Itineraries</header>
+  <main>
+    <!-- Example Completed Trip -->
+    <div class="trip-card">
+      <img src="https://images.unsplash.com/photo-1610529025988-5e39a789dab4?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D " alt="Rome">
+      <div class="trip-content">
+        <h3>Rome</h3>
+        <p>12th Jan 2025 - 18th Jan 2025</p>
+        <span class="status completed">✅ Completed</span>
+      </div>
+    </div>
+
+    <!-- Another Completed Trip -->
+    <div class="trip-card">
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=1173&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D " alt="Paris">
+      <div class="trip-content">
+        <h3>Paris</h3>
+        <p>2nd Feb 2025 - 9th Feb 2025</p>
+        <span class="status completed">✅ Completed</span>
+      </div>
+    </div>
+  </main>
+
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="explore.html">Explore</a>
+    <a href="itineraries.html" class="active">Itineraries</a>
+    <a href="profile.html">Profile</a>
+  </nav>
+</body>
+</html>
